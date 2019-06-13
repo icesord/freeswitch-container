@@ -1,4 +1,3 @@
-#FROM debian:latest as freeswitch-base
 FROM debian:latest
 MAINTAINER xuzhenhai<xuzhenhai@x-y-t.cn>
 COPY sources.list.163.stretch /etc/apt/sources.list
@@ -28,7 +27,7 @@ RUN apt-get update && apt-get install -y \
 
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
-#ENV LC_ALL en_US.utf-8
+
 WORKDIR /usr/src
 RUN git clone https://freeswitch.org/stash/scm/fs/freeswitch.git 
 
@@ -40,6 +39,7 @@ RUN rm -fr /usr/src/freeswitch
 ADD modules.conf.xml /usr/local/freeswitch/conf/autoload_configs/
 RUN ln -sf /usr/local/freeswitch/bin/freeswitch /usr/bin/
 RUN ln -sf /usr/local/freeswitch/bin/fs_cli /usr/bin/
+
 WORKDIR /usr/local/freesitch
 ADD docker-entrypiont.sh /
 RUN chmod a+x /docker-entrypiont.sh
