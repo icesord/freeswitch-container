@@ -12,15 +12,6 @@ RUN apt-get update && apt-get install -y \
   libpng16-16 yasm nasm libavformat-dev libswscale-dev libavfilter-dev \
   libavresample-dev libshout-dev libmpg123-dev libmp3lame-dev \
   libmagickcore-dev \
-  uuid zlib1g 'libjpeg8|libjpeg62-turbo' \
-  libncurses5 libssl1.0 libpcre3 libcurl3 \
-  libedit2 libspeexdsp1 \
-  libsqlite3-0 libgdbm3 libdb5.3 libvlc5 \
-  libsndfile1 libopus0 liblua5.2-0 libtiff5 libavresample3 libfreetype6 \
-  libpng16-16 yasm nasm libavformat57 libswscale4 libavfilter6 \
-  libavresample3 libshout3 libmpg123-0 libmp3lame0 \
-  libmagickcore-6.q16-3 libjemalloc1 \
-  libhiredis0.13 unixodbc \
   unixodbc unixodbc-dev sqlite3 odbc-postgresql \
   git htop procps gdb ca-certificates locales\
   && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 && rm -rf /var/lib/apt/lists/*
